@@ -9,7 +9,8 @@ import cucumber.api.junit.Cucumber;
 
 @SpringBootTest
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources", glue = "com.project.brownbag")
+@CucumberOptions(features = "src/test/resources", glue = "com.project.brownbag", plugin = {
+		"html:target/cucumber-html-report", "json:target/cucumber-json-report.json" })
 public class SpringBootBddApplicationTests {
 
 	@Test
